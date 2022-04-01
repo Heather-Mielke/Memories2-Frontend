@@ -1,13 +1,20 @@
-import React, { useEffect } from 'react'
-import { getPhotos, photoSelectors  } from './photoSlice'
+import React, { useEffect, useCallback } from 'react'
+import { 
+    getPhotos, 
+    photoSelectors, 
+    deletePhoto  
+} from './photoSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import Photo from '../Photo'
 
 const Photos = () => {
     const dispatch = useDispatch()
-    const total = useSelector(photoSelectors.selectTotal)
+    // const total = useSelector(photoSelectors.selectTotal)
     const allPhotos = useSelector(photoSelectors.selectAll)
-    console.log( allPhotos)
+    const onDelete = useCallback((id) =>{
+        dispatch(deletePhoto(id))
+    }, [])   
+console.log( allPhotos)
     useEffect(()=> {
         dispatch(getPhotos())
     }, [])
@@ -20,7 +27,7 @@ const Photos = () => {
         <section className="masonary-container">
           {allPhotos.map((photo)=> {
               return(
-          <Photo key={photo.id} photo={photo}/>
+          <Photo key={photo.id} photo={photo} onDelete={onDelete}/>
               ) 
             })}
         </section> 

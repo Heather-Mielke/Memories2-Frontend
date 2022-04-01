@@ -4,17 +4,18 @@ import { IoExpand } from "react-icons/io5";
 import { MdEdit, MdDelete } from 'react-icons/md'
 import { Link } from "react-router-dom";
 
-const Photo = ({ photo }) => {
+const Photo = ({ photo, onDelete }) => {
     return (
         <>
             <article key={photo.id} className=' relative text-sm cards'>
+                <h1 className="text-5xl">{photo.id}</h1>
                 <img src={photo.image} alt='post' className='rounded-lg'/>
                 <button className='absolute top-0 right-0 mr-1 mt-1 text-2xl p-5'><IoExpand className='absolute top-0 right-0 mr-1 mt-1'/></button>
                 <div className='flex justify-between'>
                     <h3 className="font-bold pt-1">{photo.caption}</h3>
                     <div className="pt-1 pb-2">
                         <Link to='/editpost'><button className="text-s"><MdEdit/></button></Link>
-                        <button className="text-s"><MdDelete/></button>
+                        <button className="text-s" onClick={() => onDelete(photo.id)}><MdDelete/></button>
                     </div>
                 </div>
                 <div className="flex w-10  pb-1">

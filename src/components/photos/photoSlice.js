@@ -25,15 +25,15 @@ const baseURL = 'https://photo-memories-forever.herokuapp.com/'
       
 
   
-//   export const deletePhoto = createAsyncThunk(
-//     'photo/deletePhoto',
-//     async (id) => {
-//       await axios.delete(`${baseURL}api/photos/${id}`, {
-//         method: 'DELETE',
-//       })
-//       return id
-//     }
-//   )
+  export const deletePhoto = createAsyncThunk(
+    'photo/deletePhoto',
+    async (id) => {
+      await axios.delete(`${baseURL}api/photos/${id}`, {
+        method: 'DELETE',
+      })
+      return id
+    }
+  )
   
 //   export const editPhoto = createAsyncThunk(
 //     'photo/editPhoto',
@@ -67,7 +67,7 @@ const baseURL = 'https://photo-memories-forever.herokuapp.com/'
     }),
     reducers: {
       setAllPhotos: photosAdapter.setAll,
-    //   setOnePhotos: photosAdapter.removeOne,
+      setOnePhotos: photosAdapter.removeOne,
     //   setManyPhotos: photosAdapter.addMany,
     //   updateOnePhotos: photosAdapter.updateOne,
     },
@@ -82,16 +82,16 @@ const baseURL = 'https://photo-memories-forever.herokuapp.com/'
       [getPhotos.rejected](state) {
         state.loading = false
       },
-    //   [deletePhoto.rejected](state) {
-    //     state.loading = false
-    //   },
-    //   [deletePhoto.pending](state) {
-    //     state.loading = true
-    //   },
-    //   [deletePhoto.fulfilled](state, { payload: id }) {
-    //     state.loading = false
-    //     photosAdapter.removeOne(state, id)
-    //   },
+      [deletePhoto.rejected](state) {
+        state.loading = false
+      },
+      [deletePhoto.pending](state) {
+        state.loading = true
+      },
+      [deletePhoto.fulfilled](state, { payload: id }) {
+        state.loading = false
+        photosAdapter.removeOne(state, id)
+      }
     //   [editPhoto.pending](state) {
     //     state.loading = true
     //   },
@@ -117,8 +117,8 @@ export const photoSelectors = photosAdapter.getSelectors(state => state.photos)
   
   export const {
     setAllPhotos,
-    // setManyPhotos,
-    // setOnePhotos,
+    setManyPhotos,
+    setOnePhotos,
     // updateOnePhoto,
     // removeLikes,
     // removeTagById,

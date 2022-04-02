@@ -73,6 +73,78 @@ const initialState = [
     reactions: {
         heart: 80
     }
+},
+{id: '9', 
+    image: 'https://i.imgur.com/rKDOPhv.jpg', 
+    caption: "Family Photos", 
+    description: "Family photos with my two best girls.",
+    date: sub(new Date(), { minutes: 15}).toISOString(),
+    reactions: {
+        heart: 80
+    }
+},
+{id: '10', 
+    image: 'https://i.imgur.com/rKDOPhv.jpg', 
+    caption: "Family Photos", 
+    description: "Family photos with my two best girls.",
+    date: sub(new Date(), { minutes: 15}).toISOString(),
+    reactions: {
+        heart: 80
+    }
+},
+{id: '11', 
+    image: 'https://i.imgur.com/rKDOPhv.jpg', 
+    caption: "Family Photos",   
+    description: "Family photos with my two best girls.",
+    date: sub(new Date(), { minutes: 15}).toISOString(),
+    reactions: {
+         heart: 80
+}
+},
+{id: '12', 
+    image: 'https://i.imgur.com/rKDOPhv.jpg', 
+    caption: "Family Photos", 
+    description: "Family photos with my two best girls.",
+    date: sub(new Date(), { minutes: 15}).toISOString(),
+    reactions: {
+        heart: 80
+}
+},
+{id: '13', 
+    image: 'https://i.imgur.com/rKDOPhv.jpg', 
+    caption: "Family Photos", 
+    description: "Family photos with my two best girls.",
+    date: sub(new Date(), { minutes: 15}).toISOString(),
+    reactions: {
+        heart: 80
+    }
+},
+{id: '14', 
+    image: 'https://i.imgur.com/rKDOPhv.jpg', 
+    caption: "Family Photos", 
+    description: "Family photos with my two best girls.",
+    date: sub(new Date(), { minutes: 15}).toISOString(),
+    reactions: {
+        heart: 80
+    }
+},
+{id: '15', 
+    image: 'https://i.imgur.com/rKDOPhv.jpg', 
+    caption: "Family Photos", 
+    description: "Family photos with my two best girls.",
+    date: sub(new Date(), { minutes: 15}).toISOString(),
+    reactions: {
+        heart: 80
+    }
+},
+{id: '16', 
+    image: 'https://i.imgur.com/rKDOPhv.jpg', 
+    caption: "Family Photos", 
+    description: "Family photos with my two best girls.",
+    date: sub(new Date(), { minutes: 15}).toISOString(),
+    reactions: {
+        heart: 80
+    }
 }
 ]
 

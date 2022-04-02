@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import postReducer from '../components/postsSlice'
+import postReducer from '../components/posts/postsSlice'
 import userReducer from '../components/users/usersSlice'
 import photosReducer from '../components/photos/photoSlice'
 

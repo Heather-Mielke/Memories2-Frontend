@@ -1,20 +1,12 @@
-import React, {useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import Home from './pages/Home'
 import Navbar from './components/Navbar'
 import Discover from './pages/Discover'
-import AddPost from "./components/AddPost";
-
-import EditPost from "./components/EditPost";
+import AddPost from "./components/AddPost"
+import EditPost from "./components/EditPost"
 
 const App = () => {
-
-
-
-
-
-
-
 
   return(
     <>
@@ -24,7 +16,7 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/discover' element={<Discover />} />
           <Route path='/newpost' element={<AddPost/>} />
-          <Route path='/editpost' element={<EditPost/>} />
+          <Route path='/editpost/:id' element={<EditPost/>} />
         </Routes>
     </Router>
     </>

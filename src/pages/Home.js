@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import beach from '../images/beach.jpg'
 import canyon from '../images/canyon.jpg'
 import family1 from '../images/family1.jpg'
@@ -8,9 +8,13 @@ import family2 from '../images/family2.jpg'
 import paint from '../images/kid-paint.jpg'
 import family4 from '../images/family-baby.jpg'
 import couple from '../images/old-couple.jpg'
-import PostsList from '../components/PostsList'
+import PostsList from '../components/posts/PostsList'
 
 const Home = () => {
+    useEffect(()=>{
+        window.scrollTo({ top: 0 });
+    // scroll to the top of the browser window when changing route
+    },[])
     return(
         <>
         <div className='head-container'>

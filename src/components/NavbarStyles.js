@@ -7,7 +7,7 @@ export const NavbarContainer = styled.nav`
     height: 100px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     box-shadow: 0 3px 10px rgb(200 200 200/.3);
     position:sticky;
     top: 0;
@@ -17,16 +17,16 @@ export const LogoContainer = styled.div`
     margin: 1vh 1vw;
     width: 20%;
 
-    
 `
 export const Logo = styled.h1`
-    font-size: 48px;
+    font-size: 3rem;
     color: white;
     padding: 5px;
     font-family: 'Neonderthaw', cursive;
-    
-    @media (max-width: 420px) {
-    font-size: 35px;
+    width: 100%;
+
+    @media (max-width: 900px) {
+    font-size: 30px;
 }
 `
 export const IconsContainer = styled.div`
@@ -36,7 +36,7 @@ export const IconsContainer = styled.div`
     color: white;
     font-size: 30px;
     width: 20%;
-    
+    margin-right: 2vw;
 `
 export const SearchContainer = styled.div`
     display: flex;
@@ -49,19 +49,21 @@ export const SearchContainer = styled.div`
 `
 export const SearchBar = styled.input`
     width: 93%;
-    padding: 0 5px;
+    padding:6px;
     background: transparent;
     display:flex;
     justify-content: flex-start;
     align-items: center;
     box-shadow: 0 3px 10px rgb( 200 200 200 /.9);
     border-radius: 30px;
+    font-family: 'Abhaya Libre', serif;
 `
 export const Discover = styled.button`
     /* color: rgb(0 0 50); */
     font-size: 18px;
     color: white;
     margin-right: 2vw;
+    margin-bottom: .5vh;
     border: none;
     padding: 5px 10px;
     border-radius: 30px;

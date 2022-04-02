@@ -18,7 +18,6 @@ const PostList = () => {
             <h3 className="font-bold pt-1">{post.caption}</h3>
             <p><Time timestamp={post.date} /></p>
             </div>
-            {/* <p>{post.description}</p>  */}
             <p> <PostAuthor userId={post.userId}/> </p>   
             <ReactionButtons post={post}/>
             

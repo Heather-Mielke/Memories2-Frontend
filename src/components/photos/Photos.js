@@ -1,33 +1,64 @@
-import React, { useEffect, useCallback } from 'react'
+import React, { useEffect, useCallback} from 'react'
 import { 
     getPhotos, 
     photoSelectors, 
-    deletePhoto  
+    deletePhoto,  
+    // updatePhoto,
+    // updateOnePhoto
 } from './photoSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import Photo from '../Photo'
 
-const Photos = () => {
+
+//this helps minimize rerenders having many things in parent
+const Photos = ({query, display, setDisplay}) => {
     const dispatch = useDispatch()
-    // const total = useSelector(photoSelectors.selectTotal)
+    
     const allPhotos = useSelector(photoSelectors.selectAll)
     const onDelete = useCallback((id) =>{
         dispatch(deletePhoto(id))
-    }, [])   
-console.log( allPhotos)
+    }, []) 
+    // const [query, setQuery] = useState('')
+
+// const onUpdate = useCallback((id, newObj) => {
+//     dispatch(updateOnePhoto({id, changes: newObj}))
+// }, [])
     useEffect(()=> {
         dispatch(getPhotos())
     }, [])
 
+    console.log(display)
+
   return  (
       <>
-        <div className=' flex justify-center mt-16'>
-             <h2 className=' text-3xl text-white title new-post'>Discover</h2>
-         </div>
+        
         <section className="masonary-container">
-          {allPhotos.map((photo)=> {
+          {allPhotos.filter((photo) => {
+              if(photo.caption.includes(query)){
+                  return photo
+              }else if(photo.caption.toLowerCase().includes(query)) {
+                    return photo
+              }else if(photo.description.includes(query)){
+                  return photo
+              }else if (photo.description.toLowerCase().includes(query)) {
+                  return photo
+              }
+          })
+          .map(({ id, image, caption, description, likes, post_date, creator})=> {
               return(
-          <Photo key={photo.id} photo={photo} onDelete={onDelete}/>
+          <Photo 
+          key={id} 
+          id={id} 
+          image={image}
+          caption={caption}
+          description={description}
+          likes={likes}
+          post_date={post_date}
+          creator={creator}
+          onDelete={onDelete} 
+          display={display}
+          setDisplay={setDisplay}
+           />
               ) 
             })}
         </section> 

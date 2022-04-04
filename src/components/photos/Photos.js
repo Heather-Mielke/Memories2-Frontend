@@ -8,7 +8,7 @@ import {
 } from './photoSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import Photo from '../Photo'
-import { useLocation } from 'react-router-dom'
+
 import { BsSearch } from 'react-icons/bs'
 
 //this helps minimize rerenders having many things in parent
@@ -17,7 +17,7 @@ const Photos = () => {
     const allPhotos = useSelector(photoSelectors.selectAll)
     const onDelete = useCallback((id) =>{
         dispatch(deletePhoto(id))
-    }, []) 
+    }, [dispatch]) 
     const [query, setQuery] = useState('')
 
 // const onUpdate = useCallback((id, newObj) => {
@@ -26,7 +26,7 @@ const Photos = () => {
     useEffect(()=> {
         dispatch(getPhotos())
        
-    }, [])
+    }, [dispatch])
 
    
   return  (
@@ -49,6 +49,8 @@ const Photos = () => {
                   return photo
               }else if (photo.description.toLowerCase().includes(query)) {
                   return photo
+              }else {
+                  return ''
               }
               
           })

@@ -58,8 +58,8 @@ const AddPost = () => {
               className='m-5 py-4 px-2 pb-32 mb-20 text-black rounded-3xl' 
               type='text'
               name='description'
-               placeholder='Description' 
-               onChange={(e)=> setPost({...post, description: e.target.value})}
+              placeholder='Description' 
+              onChange={(e)=> setPost({...post, description: e.target.value})}
                />
              <button 
               className='  rounded-3xl text-4xl edit-btn w-28 mx-auto mb-80 submit' 

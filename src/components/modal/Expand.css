@@ -59,6 +59,7 @@
 .creator {
     color: grey;
     font-size: 13px;
+    font-family: 'Abhaya Libre';
 }
 .description {
     font-size: 20px;
@@ -78,3 +79,56 @@
     font-size: 15px;
     font-family: 'Abhaya Libre', serif;
 }
+
+.comment{
+    font-family: 'Abhaya Libre', serif;
+    font-size: 15px;
+  }
+  .comment-box {
+    background: rgba(220, 220, 230, 0.3);
+    border: 1px solid white;
+  }
+  .send{
+    transition: all .3s ease;
+    font-size: 25px;
+  }
+  .send:hover{
+    transform: translateX(3px);
+    color: black;
+   
+  }
+  @media (max-width: 1100px) {
+      .modal {
+          flex-direction: column;
+          height: 80vh;
+      }
+      .expand-contents {
+        width: 85%;
+    }
+    .caption {
+        font-size: 30px;
+    }
+    
+    .description {
+        font-size: 15px;
+        width: 95%;
+    }
+    .comment {
+        align-self: flex-end;
+        padding-left: 15px;
+    }
+    .comment-box{
+        height: 3rem;
+        margin: 0 auto;
+    }
+    .send{
+        margin: 1vh 8vw 0 0;
+    }
+   
+  }
+  @media (max-width: 900px) {
+      .expand-image-container{
+          width:60%;
+          margin-top: 2vh;
+      }
+  }

@@ -17,8 +17,7 @@ const baseURL = 'https://photo-memories-forever.herokuapp.com/'
        const data = await axios.get(
             `${baseURL}api/photos`)
             .then((res) => res.data)
-            dispatch(setAllPhotos(data))
-            
+            dispatch(setAllPhotos(data))   
     }
   )
  
@@ -36,10 +35,11 @@ const baseURL = 'https://photo-memories-forever.herokuapp.com/'
   export const createPhoto = createAsyncThunk(
     'photo/createPhoto',
     async ({post}) => {
-      await axios.post(`${baseURL}api/photos`, post) 
-       .then((res)=> console.log(res.data)
-        
-  )})
+      console.log(post)
+    await axios.post(`${baseURL}api/photos`, post) 
+       .then((res)=> 
+        res.data)
+})
 
   //Edits the caption only right now
   export const updatePhoto = createAsyncThunk(
@@ -50,11 +50,10 @@ const baseURL = 'https://photo-memories-forever.herokuapp.com/'
           caption: caption,
           description: description
       }) 
-      .then((res)=> {console.log(res.data)}
-      
-    )})
+      .then((res)=> res.data)
+  })
   
-  const photosAdapter = createEntityAdapter({
+  export const photosAdapter = createEntityAdapter({
     selectId: (photo) => photo.id,
   })
   
@@ -66,13 +65,15 @@ const baseURL = 'https://photo-memories-forever.herokuapp.com/'
       loading: false,
         image: '',
         caption: '',
-        description: ''
+        description: '',
+        likes: ''
     }),
     reducers: {
       setAllPhotos: photosAdapter.setAll,
       setOnePhotos: photosAdapter.removeOne,
       setManyPhotos: photosAdapter.addMany,
       updateOnePhotos: photosAdapter.updateOne,
+      addOnePhoto: photosAdapter.addOne,
       setUpdate : (state, action) => {
         //   state.edit = action.payload.edit
           state.image = action.payload.image
@@ -123,7 +124,7 @@ const baseURL = 'https://photo-memories-forever.herokuapp.com/'
       },
       [createPhoto.fulfilled](state, action ) {
         state.loading = false
-        photosAdapter.post=[action.payload]
+        photosAdapter.addOne(action.payload)
       },
     }, 
   })
@@ -137,7 +138,8 @@ export const photoSelectors = photosAdapter.getSelectors(state => state.photos)
     setManyPhotos,
     setOnePhotos,
     updateOnePhoto,
-    setUpdate
+    setUpdate,
+    addOnePhoto
   } = photosSlice.actions
   
   export default photosSlice.reducer

@@ -1,14 +1,14 @@
 
 import React, {useEffect, useState} from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { createPhoto } from './photos/photoSlice'
+import { useDispatch} from 'react-redux'
+import {createPhoto } from './photos/photoSlice'
 import { useNavigate } from 'react-router-dom'
 
 
 
 const AddPost = () => {
 
-    const emptyPost = {image: '', caption: '', description: '', creator: ''}
+    const emptyPost = {image: '', caption: '', description: '', likes: 0, creator: ''}
     const [post, setPost] = useState(emptyPost)
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -18,10 +18,10 @@ const AddPost = () => {
    
     const handleSubmit = (e) => {
       e.preventDefault()
-      console.log(post)
       dispatch(createPhoto({post}))
-      setPost({ image: '', caption:'', description: '', creator: ''})
+      setPost({ image: '', caption: '', description: '', creator: ''})
       navigate('/discover')
+      
     }
 
  useEffect(()=>{
@@ -61,7 +61,7 @@ const AddPost = () => {
                placeholder='Description' 
                onChange={(e)=> setPost({...post, description: e.target.value})}
                />
-              <button 
+             <button 
               className='  rounded-3xl text-4xl edit-btn w-28 mx-auto mb-80 submit' 
               value='submit'
               type='submit'

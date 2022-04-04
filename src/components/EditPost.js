@@ -12,7 +12,7 @@ const EditPost = () => {
     const [caption, setCaption] = useState('')
     const [description, setDescription] = useState('')
     const params = useParams()
-   console.log()
+
     // const baseURL = 'https://photo-memories-forever.herokuapp.com'
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -34,7 +34,8 @@ const EditPost = () => {
 
     useEffect(()=> {
        getPhotoDetails()
-       
+       window.scrollTo({ top: 0 });
+       // scroll to the top of the browser window when changing route
     }, [])
 
 

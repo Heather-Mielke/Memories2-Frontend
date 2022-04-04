@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback} from 'react'
+import React, { useEffect, useCallback, useState} from 'react'
 import { 
     getPhotos, 
     photoSelectors, 
@@ -8,30 +8,37 @@ import {
 } from './photoSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import Photo from '../Photo'
-
+import { useLocation } from 'react-router-dom'
+import { BsSearch } from 'react-icons/bs'
 
 //this helps minimize rerenders having many things in parent
-const Photos = ({query, display, setDisplay}) => {
+const Photos = () => {
     const dispatch = useDispatch()
-    
     const allPhotos = useSelector(photoSelectors.selectAll)
     const onDelete = useCallback((id) =>{
         dispatch(deletePhoto(id))
     }, []) 
-    // const [query, setQuery] = useState('')
+    const [query, setQuery] = useState('')
 
 // const onUpdate = useCallback((id, newObj) => {
 //     dispatch(updateOnePhoto({id, changes: newObj}))
 // }, [])
     useEffect(()=> {
         dispatch(getPhotos())
+       
     }, [])
 
-    console.log(display)
-
+   
   return  (
       <>
-        
+        <div className='search-container'>
+            <BsSearch className='search-icon'/>
+            <input 
+            type='text'
+            placeholder='Search' 
+            className='text-2xl search' 
+            onChange={e => setQuery(e.target.value)}/>
+        </div>
         <section className="masonary-container">
           {allPhotos.filter((photo) => {
               if(photo.caption.includes(query)){
@@ -43,8 +50,9 @@ const Photos = ({query, display, setDisplay}) => {
               }else if (photo.description.toLowerCase().includes(query)) {
                   return photo
               }
+              
           })
-          .map(({ id, image, caption, description, likes, post_date, creator})=> {
+          .map(({ id, image, caption, description, likes, creator})=> {
               return(
           <Photo 
           key={id} 
@@ -53,11 +61,8 @@ const Photos = ({query, display, setDisplay}) => {
           caption={caption}
           description={description}
           likes={likes}
-          post_date={post_date}
           creator={creator}
           onDelete={onDelete} 
-          display={display}
-          setDisplay={setDisplay}
            />
               ) 
             })}

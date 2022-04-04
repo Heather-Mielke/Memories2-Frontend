@@ -75,75 +75,75 @@ const initialState = [
     }
 },
 {id: '9', 
-    image: 'https://i.imgur.com/rKDOPhv.jpg', 
-    caption: "Family Photos", 
-    description: "Family photos with my two best girls.",
-    date: sub(new Date(), { minutes: 15}).toISOString(),
+    image: 'https://i.imgur.com/wh6U2re.jpg', 
+    caption: "Abstract Image", 
+    description: "Blue and Red abstract desing.",
+    date: sub(new Date(), { minutes: 35}).toISOString(),
     reactions: {
-        heart: 80
+        heart: 85
     }
 },
 {id: '10', 
-    image: 'https://i.imgur.com/rKDOPhv.jpg', 
-    caption: "Family Photos", 
-    description: "Family photos with my two best girls.",
-    date: sub(new Date(), { minutes: 15}).toISOString(),
+    image: 'https://i.imgur.com/wnabcPT.jpg', 
+    caption: "Makeup Life", 
+    description: "Got my red lipstick, bronzer and lightening bolt earings.",
+    date: sub(new Date(), { minutes: 25}).toISOString(),
     reactions: {
-        heart: 80
+        heart: 60
     }
 },
 {id: '11', 
-    image: 'https://i.imgur.com/rKDOPhv.jpg', 
-    caption: "Family Photos",   
-    description: "Family photos with my two best girls.",
-    date: sub(new Date(), { minutes: 15}).toISOString(),
+    image: 'https://i.imgur.com/PP5Kckh.jpg', 
+    caption: "Beep Beep",   
+    description: "Look out, yellow beetle coming through.",
+    date: sub(new Date(), { minutes: 55}).toISOString(),
     reactions: {
-         heart: 80
+         heart: 30
 }
 },
 {id: '12', 
-    image: 'https://i.imgur.com/rKDOPhv.jpg', 
-    caption: "Family Photos", 
-    description: "Family photos with my two best girls.",
-    date: sub(new Date(), { minutes: 15}).toISOString(),
+    image: 'https://i.imgur.com/7qHlW67.jpg', 
+    caption: "Home Decor", 
+    description: "Pink Chairs with fun accent pieces.",
+    date: sub(new Date(), { minutes: 85}).toISOString(),
     reactions: {
-        heart: 80
+        heart: 22
 }
 },
 {id: '13', 
-    image: 'https://i.imgur.com/rKDOPhv.jpg', 
-    caption: "Family Photos", 
-    description: "Family photos with my two best girls.",
+    image: 'https://i.imgur.com/sWlOhQ5.jpg', 
+    caption: "Yellow Accent Chair", 
+    description: "Give your home a pop of color with something like a yellow chair!",
     date: sub(new Date(), { minutes: 15}).toISOString(),
     reactions: {
-        heart: 80
+        heart: 41
     }
 },
 {id: '14', 
-    image: 'https://i.imgur.com/rKDOPhv.jpg', 
-    caption: "Family Photos", 
-    description: "Family photos with my two best girls.",
-    date: sub(new Date(), { minutes: 15}).toISOString(),
+    image: 'https://i.imgur.com/9xMBO0y.jpg', 
+    caption: "Father Son Day", 
+    description: "Spending the day with Micky Jr.",
+    date: sub(new Date(), { minutes: 25}).toISOString(),
     reactions: {
-        heart: 80
+        heart: 60
     }
 },
 {id: '15', 
-    image: 'https://i.imgur.com/rKDOPhv.jpg', 
-    caption: "Family Photos", 
-    description: "Family photos with my two best girls.",
-    date: sub(new Date(), { minutes: 15}).toISOString(),
+    image: 'https://i.imgur.com/ZjSF9L1.jpg', 
+    caption: "DIY Anyone?", 
+    description: "Getting ready to DIY some thank you cards.",
+    date: sub(new Date(), { minutes: 35}).toISOString(),
     reactions: {
-        heart: 80
+        heart: 32
     }
 },
 {id: '16', 
-    image: 'https://i.imgur.com/rKDOPhv.jpg', 
-    caption: "Family Photos", 
-    description: "Family photos with my two best girls.",
-    date: sub(new Date(), { minutes: 15}).toISOString(),
+    image: 'https://i.imgur.com/bJrJTfh.jpg', 
+    caption: "Work From Home", 
+    description: "Working from home.. I think yes! Love having my own personal space.",
+    date: sub(new Date(), { minutes: 18}).toISOString(),
     reactions: {
-        heart: 80
+        heart: 40
     }
 }
 ]

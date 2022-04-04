@@ -38,26 +38,26 @@ export const IconsContainer = styled.div`
     width: 20%;
     margin-right: 2vw;
 `
-export const SearchContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    font-size: 30px;
-    width: 45%;
+// export const SearchContainer = styled.div`
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     color: white;
+//     font-size: 30px;
+//     width: 45%;
     
-`
-export const SearchBar = styled.input`
-    width: 93%;
-    padding:6px;
-    background: transparent;
-    display:flex;
-    justify-content: flex-start;
-    align-items: center;
-    box-shadow: 0 3px 10px rgb( 200 200 200 /.9);
-    border-radius: 30px;
-    font-family: 'Abhaya Libre', serif;
-`
+// `
+// export const SearchBar = styled.input`
+//     width: 93%;
+//     padding:6px;
+//     background: transparent;
+//     display:flex;
+//     justify-content: flex-start;
+//     align-items: center;
+//     box-shadow: 0 3px 10px rgb( 200 200 200 /.9);
+//     border-radius: 30px;
+//     font-family: 'Abhaya Libre', serif;
+// `
 export const Discover = styled.button`
     /* color: rgb(0 0 50); */
     font-size: 18px;

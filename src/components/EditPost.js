@@ -19,13 +19,7 @@ const EditPost = () => {
     // const { update } = useSelector((state) => ({...state.post}))
     const id = params.id
 
-    const getPhotoDetails = async () => {
-       let result = await axios.get(`https://photo-memories-forever.herokuapp.com/api/photos/${params.id}`)
-        result = await result.data
-            setImage(result.image)
-            setCaption(result.caption)
-            setDescription(result.description)
-        }
+    
         const handleUpdate = (e) => {
             e.preventDefault()
             dispatch(updatePhoto({id, image, caption, description}))
@@ -33,10 +27,17 @@ const EditPost = () => {
         }
 
     useEffect(()=> {
+      
+      const getPhotoDetails = async () => {
+        let result = await axios.get(`https://photo-memories-forever.herokuapp.com/api/photos/${params.id}`)
+         result = await result.data
+             setImage(result.image)
+             setCaption(result.caption)
+             setDescription(result.description)
+         }
        getPhotoDetails()
-       window.scrollTo({ top: 0 });
-       // scroll to the top of the browser window when changing route
-    }, [])
+     
+    }, [params.id])
 
 
   return (

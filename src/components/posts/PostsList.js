@@ -20,7 +20,7 @@ const PostList = () => {
             <h3 className="font-bold pt-1">{post.caption}</h3>
             <p><Time timestamp={post.date} /></p>
             </div>
-            <p> <PostAuthor userId={post.userId}/> </p>   
+            <p className="creator"> <PostAuthor userId={post.userId} /> </p>   
             <ReactionButtons post={post}/>  
         </article>
     ))

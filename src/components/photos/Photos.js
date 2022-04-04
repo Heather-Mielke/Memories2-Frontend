@@ -14,6 +14,7 @@ import { BsSearch } from 'react-icons/bs'
 //this helps minimize rerenders having many things in parent
 const Photos = () => {
     const dispatch = useDispatch()
+    const loading = useSelector(getPhotos.pending)
     const allPhotos = useSelector(photoSelectors.selectAll)
     const onDelete = useCallback((id) =>{
         dispatch(deletePhoto(id))
@@ -28,7 +29,7 @@ const Photos = () => {
        
     }, [dispatch])
 
-   
+   console.log(loading)
   return  (
       <>
         <div className='search-container'>
@@ -56,6 +57,8 @@ const Photos = () => {
           })
           .map(({ id, image, caption, description, likes, creator})=> {
               return(
+                  <>
+      
           <Photo 
           key={id} 
           id={id} 
@@ -66,6 +69,8 @@ const Photos = () => {
           creator={creator}
           onDelete={onDelete} 
            />
+    
+              </>
               ) 
             })}
         </section> 
